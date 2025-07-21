@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'wouter';
 import { useState } from 'react';
 import { useCart } from '@/hooks/useCart';
+// import { ThemeToggle } from '@/components/ThemeToggle';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 
 function Header() {
@@ -16,7 +17,7 @@ function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-effect">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-effect dark:bg-gray-900/80 dark:backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -32,15 +33,15 @@ function Header() {
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href}>
-                <a className={`text-secondary hover:text-primary transition-colors duration-200 font-medium ${
-                  location === item.href ? 'text-primary' : ''
+                <a className={`text-secondary dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors duration-200 font-medium ${
+                  location === item.href ? 'text-primary dark:text-accent' : ''
                 }`}>
                   {item.name}
                 </a>
               </Link>
             ))}
             <Link href="/cart">
-              <a className="text-secondary hover:text-primary transition-colors duration-200 font-medium relative">
+              <a className="text-secondary dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors duration-200 font-medium relative">
                 <ShoppingCart className="w-5 h-5" />
                 {cartCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -49,13 +50,15 @@ function Header() {
                 )}
               </a>
             </Link>
+            {/* <ThemeToggle /> */}
           </nav>
           
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            {/* <ThemeToggle /> */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-secondary hover:text-primary"
+              className="text-secondary dark:text-gray-200 hover:text-primary dark:hover:text-accent"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -64,16 +67,16 @@ function Header() {
         
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
+          <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Link key={item.name} href={item.href}>
                   <a 
                     className={`block px-3 py-2 text-base font-medium ${
                       location === item.href 
-                        ? 'text-primary bg-gray-50' 
-                        : 'text-secondary hover:text-primary hover:bg-gray-50'
-                    }`}
+                        ? 'text-primary dark:text-accent bg-gray-50 dark:bg-gray-800' 
+                        : 'text-secondary dark:text-gray-200 hover:text-primary dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-gray-800'
+                    } transition-colors duration-200`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -82,7 +85,7 @@ function Header() {
               ))}
               <Link href="/cart">
                 <a 
-                  className="flex items-center px-3 py-2 text-base font-medium text-secondary hover:text-primary hover:bg-gray-50"
+                  className="flex items-center px-3 py-2 text-base font-medium text-secondary dark:text-gray-200 hover:text-primary dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <ShoppingCart className="w-5 h-5 mr-2" />
@@ -99,13 +102,13 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="bg-secondary text-white py-16">
+    <footer className="bg-secondary dark:bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="font-display font-bold text-2xl gradient-text mb-4">Zakir Khan</h3>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p className="text-gray-400 dark:text-gray-300 mb-6 max-w-md">
               Official merchandise and show bookings for India's favorite "Sakht Launda". 
               Bringing laughter and community together, one joke at a time.
             </p>
