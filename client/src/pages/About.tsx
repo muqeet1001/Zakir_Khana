@@ -1,6 +1,11 @@
 import { useInView } from '@/hooks/useInView';
 import { Card, CardContent } from '@/components/ui/card';
 
+// Import Zakir Khan images
+import formalPortrait from '@assets/imgi_59_wp8181808_1753118680310.jpg';
+import stagePerformance from '@assets/imgi_53_wp8181675_1753118680311.jpg';
+import casualPhoto from '@assets/imgi_63_wp8181845_1753118680311.jpg';
+
 export default function About() {
   const { ref: mainRef, isInView: mainInView } = useInView();
   const { ref: journeyRef, isInView: journeyInView } = useInView();
@@ -53,10 +58,12 @@ export default function About() {
             </div>
             
             <div className={`fade-in ${journeyInView ? 'visible' : ''}`} style={{ animationDelay: '0.3s' }}>
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=600" 
-                alt="Comedian performing on stage" 
-                className="w-full h-80 object-cover rounded-2xl shadow-lg"
+              <div 
+                className="w-full h-80 bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg hover-lift transition-transform duration-300"
+                style={{
+                  backgroundImage: `url(${stagePerformance})`,
+                  backgroundPosition: 'center center'
+                }}
               />
             </div>
           </div>

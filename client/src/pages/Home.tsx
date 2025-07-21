@@ -6,18 +6,36 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Play, Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+// Import Zakir Khan brand images
+import heroPortrait from '@assets/imgi_59_wp8181808_1753118680310.jpg';
+import stagePerformance1 from '@assets/imgi_18_wp8181846_1753118680309.jpg';
+import stagePerformance2 from '@assets/imgi_53_wp8181675_1753118680311.jpg';
+import casualPortrait from '@assets/imgi_63_wp8181845_1753118680311.jpg';
+import kakshaPoster from '@assets/imgi_22_wp8181864_1753118680311.jpg';
+import haqSePoster from '@assets/imgi_16_wp8181843_1753118680312.jpg';
+import fanPhoto from '@assets/imgi_15_wp8181842_1753118680312.jpg';
+import formalPortrait from '@assets/imgi_59_wp8181808_1753118680310.jpg';
+
 function HeroSection() {
   const { ref, isInView } = useInView();
 
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-gray-900 animate-gradient-shift"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 via-transparent to-yellow-500/20 animate-gradient-float"></div>
+      {/* Hero Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 hover:scale-110 transition-transform duration-[10s]"
+        style={{
+          backgroundImage: `url(${heroPortrait})`,
+          backgroundPosition: 'center 30%'
+        }}
+      />
+      {/* Gradient Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-orange-500/30 via-transparent to-purple-500/20 z-10 animate-gradient-float"></div>
       
-      <ThreeBackground particleCount={30} />
+      <ThreeBackground particleCount={20} />
       
-      <div ref={ref} className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+      <div ref={ref} className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
         <h1 className={`font-display font-bold text-5xl md:text-7xl mb-6 fade-in typewriter ${isInView ? 'visible' : ''}`}>
           Zakir Khan
           <span className="block gradient-text glow-text">Sakht Launda Official</span>
@@ -119,9 +137,19 @@ function VideoIntroSection() {
         </div>
         
         <div className={`relative max-w-4xl mx-auto fade-in ${isInView ? 'visible' : ''}`} style={{ animationDelay: '0.3s' }}>
-          <div className="aspect-video bg-gradient-to-br from-secondary to-primary rounded-2xl shadow-2xl overflow-hidden relative group cursor-pointer hover-lift">
+          <div className="aspect-video rounded-2xl shadow-2xl overflow-hidden relative group cursor-pointer hover-lift">
+            {/* Stage Performance Background */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat transform group-hover:scale-105 transition-transform duration-500"
+              style={{
+                backgroundImage: `url(${stagePerformance1})`,
+                backgroundPosition: 'center center'
+              }}
+            />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-300"></div>
+            
             {/* Video Placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+            <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white">
                 <Play className="w-20 h-20 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-2xl font-bold mb-2">Watch Zakir's Introduction</h3>
@@ -342,21 +370,46 @@ function FeaturedClipSection() {
             Watch Zakir's most viral stand-up moment that broke the internet
           </p>
           
-          <div className="relative max-w-4xl mx-auto group cursor-pointer">
-            <div className="aspect-video bg-black/30 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 hover-lift">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-white/30 transition-colors duration-300">
-                    <Play className="w-12 h-12 text-white group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <h3 className="text-3xl font-bold mb-4">"Sakht Launda" Origin Story</h3>
-                  <p className="text-lg opacity-90 mb-6">The clip that started it all - 2.5M views</p>
-                  <Button className="bg-white text-primary hover:bg-gray-100 font-bold px-8 py-3 rounded-full hover:scale-105 transition-all duration-300">
-                    Watch Now
-                  </Button>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Kaksha Gyarvi Poster */}
+            <div className="group cursor-pointer hover-lift relative">
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 relative">
+                <div 
+                  className="w-full h-full bg-cover bg-center bg-no-repeat transform group-hover:scale-105 transition-transform duration-500"
+                  style={{
+                    backgroundImage: `url(${kakshaPoster})`
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-2xl font-bold text-white mb-2">Kaksha Gyarvi</h3>
+                  <p className="text-white/80">School life ke memorable moments</p>
                 </div>
               </div>
             </div>
+            
+            {/* Haq Se Single Poster */}
+            <div className="group cursor-pointer hover-lift relative">
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 relative">
+                <div 
+                  className="w-full h-full bg-cover bg-center bg-no-repeat transform group-hover:scale-105 transition-transform duration-500"
+                  style={{
+                    backgroundImage: `url(${haqSePoster})`
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-2xl font-bold text-white mb-2">Haq Se Single</h3>
+                  <p className="text-white/80">Single life ki sachai aur hasrat</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Button className="bg-white text-primary hover:bg-gray-100 font-bold px-8 py-3 rounded-full hover:scale-105 transition-all duration-300">
+              Watch All Shows
+            </Button>
           </div>
         </div>
       </div>

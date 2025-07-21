@@ -5,6 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import type { Show } from '@shared/schema';
 
+// Import Zakir Khan performance images
+import stagePerformance1 from '@assets/imgi_18_wp8181846_1753118680309.jpg';
+import stagePerformance2 from '@assets/imgi_53_wp8181675_1753118680311.jpg';
+import casualPerformance from '@assets/imgi_20_wp8181851_1753118680310.jpg';
+
 export default function Shows() {
   const { ref, isInView } = useInView();
 
