@@ -1,0 +1,159 @@
+Build a **full multi-page React website** for a fictional celebrity brand for the Indian stand-up comedian **Zakir Khan**, known for his comedic style and famous line **“Sakht Launda.”**
+
+The site should look **premium**, feel **alive**, and use **smooth animations and modern 3D effects** using **React**, **CSS**, **React Three Fiber**, and **Intersection Observer API**.
+
+---
+
+## 📄 **Pages to Include**
+
+1️⃣ `/` — Home page  
+2️⃣ `/shop` — Merchandise listing page (T-shirts, hoodies, mugs, posters)  
+3️⃣ `/product/:id` — Single product detail page with 3D product viewer  
+4️⃣ `/shows` — Upcoming shows page  
+5️⃣ `/show/:id` — Single show detail page with 3D background  
+6️⃣ `/cart` — Cart page  
+7️⃣ `/checkout` — Checkout page with 3D confetti on success  
+8️⃣ `/about` — About Zakir Khan page  
+9️⃣ `*` — 404 Not Found page with a funny Zakir quote
+
+---
+
+## 🧩 **Core Tech Requirements**
+
+✅ Use **Vite** or **Create React App** for setup  
+✅ Use **React Router v6** for routing  
+✅ Use **Tailwind CSS** or CSS Modules for styling  
+✅ Use **React Hooks** only (`useState`, `useEffect`, `useRef`)  
+✅ Use **@react-three/fiber** and **@react-three/drei** for Three.js integration  
+✅ Use the **Intersection Observer API** for scroll-triggered fade-in animations  
+✅ Use CSS transitions & transforms for hover effects and slide-ups  
+✅ Add `scroll-behavior: smooth` for smooth scrolling
+
+---
+
+## 🧩 **Header & Footer**
+
+- Create a reusable `Header` with a placeholder logo and nav links to all main pages.  
+- Create a reusable `Footer` with site nav, social icons (Instagram, YouTube, X), and a copyright line.
+
+---
+
+## ⚡ **Home Page Hero Section**
+
+- Full-screen hero section with a `<Canvas>` background.
+- Add a simple **3D particle field or starfield** that moves gently with mouse movement.
+- Overlay big heading: **“Zakir Khan — Sakht Launda Official”** with a CTA button like “Shop Merch.”
+- Position the text above the `<Canvas>` using absolute or grid layout.
+- Make the hero responsive and smooth.
+
+---
+
+## 🧩 **Smooth Scroll + Scroll Animations**
+
+- Implement **Intersection Observer** to reveal sections with fade-in and slide-up when they enter the viewport.
+- Use a reusable `useInView` hook.
+- Apply animations to sections across **Home**, **Shop**, **About**, **Shows**.
+
+---
+
+## 🛍️ **Shop Page**
+
+- Grid of product cards (use mock products: 2 T-shirts, 1 hoodie, 1 mug).
+- On hover, add subtle **3D tilt or scale** using CSS transform or React Three Fiber plane.
+- Each card links to `/product/:id`.
+
+---
+
+## 🧩 **Product Detail Page**
+
+- Use **React Router** dynamic route `/product/:id`.
+- Add a `<Canvas>` with a placeholder 3D model:
+  - Example: A rotating `Box` or `Sphere` for now.
+  - Add `OrbitControls` so the user can drag to rotate.
+  - Auto-rotate slowly when idle.
+- Below 3D, show product title, price, Add to Cart button, and dummy description.
+- Add fallback static image if WebGL is not supported.
+
+---
+
+## 🎤 **Shows Page**
+
+- Grid or timeline of upcoming shows.
+- Each card: city, date, venue, Buy Tickets button.
+- On hover, subtle depth or slide animation.
+
+---
+
+## 🧩 **Show Detail Page**
+
+- Dynamic route `/show/:id`.
+- Show details: city, venue, date, time.
+- Add a subtle **3D particle or confetti background** in `<Canvas>`.
+- Add a live countdown timer.
+- CTA button for Buy Tickets.
+
+---
+
+## 🛒 **Cart Page**
+
+- Show added products with quantity adjusters.
+- Include a link to proceed to `/checkout`.
+
+---
+
+## 🧾 **Checkout Page**
+
+- Simple checkout form (mock only).
+- After clicking Pay, show a **3D confetti burst** in `<Canvas>` for order success.
+- Add a confirmation message.
+
+---
+
+## 👤 **About Page**
+
+- Zakir Khan’s story with a funny *Sakht Launda* line.
+- Fade-in text blocks with Intersection Observer.
+- Floating social icons with custom hover effects.
+
+---
+
+## ❌ **404 Page**
+
+- If route not found, show **“Oops! Zakir couldn’t find this page.”**
+- Add a funny Zakir quote.
+- Optional: Add a floating 3D sign or simple particles.
+
+---
+
+## 🖱️ **Site-wide Microinteractions**
+
+- Add a **custom cursor** that’s a circle or dot following the mouse.
+- On hover over buttons, expand or glow.
+- Use CSS and React state.
+
+---
+
+## 📌 **Performance**
+
+- Keep all 3D elements lightweight.
+- Use placeholder primitives for now.
+- Add static fallbacks for mobile if needed.
+- Keep animations smooth and don’t block user input.
+
+---
+
+## ✅ **Deliverable**
+
+One complete **multi-page React site**:
+- All pages working and linked.
+- All smooth scroll, scroll reveal, hover, and 3D features working.
+- Fully responsive for mobile and desktop.
+- Clear placeholder text and images so it can be connected to a real backend later.
+
+---
+
+**Remember:**  
+Use **React Hooks**, **React Router**, **Tailwind or CSS Modules**, **Intersection Observer**, and **React Three Fiber**.  
+No external animation libraries like GSAP — use native CSS and Three.js only.
+
+✅ **This is the complete spec — build exactly as described.**
