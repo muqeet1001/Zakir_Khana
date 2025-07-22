@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'wouter';
 import { useState } from 'react';
 import { useCart } from '@/hooks/useCart';
+import { CustomCursor } from './CustomCursor';
 // import { ThemeToggle } from '@/components/ThemeToggle';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 
@@ -171,6 +172,7 @@ export function Layout({ children }: LayoutProps) {
         {children}
       </main>
       <Footer />
+      <CustomCursor />
     </div>
   );
 }

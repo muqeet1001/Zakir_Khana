@@ -21,21 +21,22 @@ function HeroSection() {
 
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Hero Background Image */}
+      {/* Hero Background Image with better alignment */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 hover:scale-110 transition-transform duration-[10s]"
+        className="absolute inset-0 hero-image bg-cover bg-center bg-no-repeat transition-transform duration-[10s] ease-out scale-100 hover:scale-105"
         style={{
           backgroundImage: `url(${heroPortrait})`,
-          backgroundPosition: 'center 30%'
+          backgroundPosition: 'center 25%',
+          backgroundSize: 'cover'
         }}
       />
-      {/* Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 z-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-orange-500/30 via-transparent to-purple-500/20 z-10 animate-gradient-float"></div>
+      {/* Premium gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/45 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-orange-600/25 via-transparent to-purple-600/15 z-10 animate-gradient-float"></div>
       
-      <ThreeBackground particleCount={20} />
+      <ThreeBackground particleCount={15} />
       
-      <div ref={ref} className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
+      <div ref={ref} className="relative z-20 text-center text-white content-max-width mx-auto px-6">
         <h1 className={`font-display font-bold text-5xl md:text-7xl mb-6 fade-in typewriter ${isInView ? 'visible' : ''}`}>
           Zakir Khan
           <span className="block gradient-text glow-text">Sakht Launda Official</span>
@@ -45,12 +46,12 @@ function HeroSection() {
         </p>
         <div className={`space-x-4 fade-in ${isInView ? 'visible' : ''}`} style={{ animationDelay: '1.2s' }}>
           <Link href="/shop">
-            <Button size="lg" className="bg-primary hover:bg-accent text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:glow">
+            <Button size="lg" className="interactive-cursor btn-primary bg-primary hover:bg-accent text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:glow">
               Shop Merch
             </Button>
           </Link>
           <Link href="/shows">
-            <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+            <Button variant="outline" size="lg" className="interactive-cursor border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl">
               Book Shows
             </Button>
           </Link>

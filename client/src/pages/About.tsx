@@ -33,13 +33,22 @@ export default function About() {
         
         <div className="space-y-12">
           {/* Main Story */}
-          <Card className={`bg-gray-100 p-8 text-center fade-in ${mainInView ? 'visible' : ''}`}>
+          <Card className={`bg-gradient-to-br from-orange-50 to-yellow-50 p-8 text-center fade-in ${mainInView ? 'visible' : ''} interactive-cursor border-0 shadow-xl`}>
             <CardContent className="p-0">
-              <div className="text-6xl mb-6">🎭</div>
-              <blockquote className="text-2xl font-medium text-secondary mb-6 italic">
+              {/* Hero portrait */}
+              <div className="mb-8 flex justify-center">
+                <div 
+                  className="w-32 h-32 bg-cover bg-center bg-no-repeat rounded-full shadow-2xl border-4 border-primary/20"
+                  style={{
+                    backgroundImage: `url(${formalPortrait})`,
+                    backgroundPosition: 'center 20%'
+                  }}
+                />
+              </div>
+              <blockquote className="text-2xl font-medium text-secondary mb-6 italic glow-text">
                 "Main sakht launda hun, main kisi se nahi darta!"
               </blockquote>
-              <p className="text-lg text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Zakir Khan has become one of India's most beloved stand-up comedians, known for his relatable storytelling and the iconic phrase "Sakht Launda." His comedy resonates with millions of Indians who see their own experiences reflected in his humorous anecdotes about relationships, family, and everyday life.
               </p>
             </CardContent>
@@ -59,12 +68,19 @@ export default function About() {
             
             <div className={`fade-in ${journeyInView ? 'visible' : ''}`} style={{ animationDelay: '0.3s' }}>
               <div 
-                className="w-full h-80 bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg hover-lift transition-transform duration-300"
+                className="interactive-cursor w-full h-80 bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg hover-lift transition-transform duration-300 overflow-hidden"
                 style={{
                   backgroundImage: `url(${stagePerformance})`,
                   backgroundPosition: 'center center'
                 }}
-              />
+              >
+                <div className="w-full h-full bg-gradient-to-t from-black/40 to-transparent flex items-end p-6">
+                  <div className="text-white">
+                    <p className="text-sm font-medium">Live Performance</p>
+                    <p className="text-xs opacity-80">Connecting with audiences nationwide</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           

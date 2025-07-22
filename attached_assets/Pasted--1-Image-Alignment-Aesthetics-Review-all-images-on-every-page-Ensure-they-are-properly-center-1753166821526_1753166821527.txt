@@ -1,0 +1,75 @@
+ 1️⃣ Image Alignment & Aesthetics
+
+Review all images on every page.
+
+Ensure they are properly centered, cropped, and aligned within their containers.
+
+Use consistent aspect ratios for products and hero images — no stretching or odd crops.
+
+Add enough whitespace and padding to make the site feel premium and uncluttered.
+
+Use subtle overlays or gradient masks if needed to make text over images readable.
+
+For Zakir’s motivational vibe, use clean fonts, bold headings, and simple color blocks (black/white with warm yellow/orange accents).
+
+🖼️ 2️⃣ Better Images for Each Section
+
+Home hero: High-resolution wide portrait with subtle fade or scale-in on load.
+
+Shop/Product: Products on neutral or transparent backgrounds.
+
+Shows: Stage shots or event photos.
+
+About: Professional photo + motivational tagline.
+
+Fan Gallery: Group crowd shots or fan photos with consistent style.
+
+✅ 3️⃣ 3D Elements Using Three.js
+
+Use @react-three/fiber and @react-three/drei for real 3D:
+
+Keep the hero background with 3D particle field or starfield.
+
+For Product Detail, add a real rotating 3D object — a basic T-shirt mockup, mug, or placeholder primitive.
+
+Add subtle background 3D accents on the About or Shows page (example: floating soft shapes or confetti in the corner).
+
+Keep all 3D models lightweight for fast load.
+
+Add fallback for mobile if needed.
+
+🖱️ 4️⃣ Mouse Animation — Limited & Classy
+
+Do NOT hijack the mouse site-wide.
+
+Add custom cursor or hover animations only in specific places:
+
+Product cards: tilt or lift on hover.
+
+Buttons: cursor expands or glows on hover.
+
+Hero CTA: cursor effect when hovering over big call-to-action.
+
+Keep normal cursor for text and general browsing.
+
+⚡ 5️⃣ Performance & Theme
+
+Use dark mode as default or toggle, with a warm motivational vibe.
+
+Optimize all images (.webp if possible).
+
+Use CSS transitions and simple Three.js animations to keep FPS smooth.
+
+Make sure the site feels premium on desktop and mobile.
+
+✅ Final check:
+
+Every page should look clean and polished.
+
+Images aligned and balanced.
+
+3D effects are subtle but add depth.
+
+Cursor interactions feel intentional and don’t distract.
+
+This should match Zakir Khan’s clean, motivational, ‘Sakht Launda’ brand. Please adjust accordingly and share a preview!”**

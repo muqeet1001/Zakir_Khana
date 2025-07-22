@@ -254,4 +254,91 @@
   .glow:hover {
     box-shadow: 0 0 30px var(--zakir-orange), 0 0 60px var(--zakir-orange);
   }
+
+  /* Custom cursor for specific interactive elements */
+  .interactive-cursor {
+    position: relative;
+  }
+
+  .interactive-cursor:hover {
+    cursor: none;
+  }
+
+  /* Enhanced product card hover effects */
+  .product-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      0 10px 20px rgba(255, 107, 53, 0.2);
+  }
+
+  /* Image alignment and aspect ratio improvements */
+  .hero-image {
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .product-image {
+    object-fit: contain;
+    background: white;
+    transition: transform 0.3s ease;
+  }
+
+  .product-image:hover {
+    transform: scale(1.1);
+  }
+
+  /* Premium whitespace and typography */
+  .section-spacing {
+    padding: 5rem 0;
+  }
+
+  .content-max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Dark mode as default with warm accents */
+  .dark-theme {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #ffffff;
+  }
+
+  /* Button glow effects for CTAs */
+  .btn-primary {
+    background: linear-gradient(45deg, var(--zakir-orange), var(--zakir-yellow));
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+  }
+
+  /* Custom cursor component */
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 107, 53, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.15s ease-out;
+    opacity: 0;
+  }
+
+  .custom-cursor.active {
+    opacity: 1;
+  }
+
+  .custom-cursor.expanded {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 107, 53, 0.6);
+  }
 }

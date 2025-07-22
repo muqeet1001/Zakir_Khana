@@ -48,15 +48,15 @@ export default function Shop() {
           {products.map((product, index) => (
             <Card 
               key={product.id}
-              className={`overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover-tilt fade-in ${isInView ? 'visible' : ''}`}
+              className={`product-card interactive-cursor overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover-tilt fade-in ${isInView ? 'visible' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Link href={`/product/${product.id}`}>
-                <a className="block">
+                <a className="block interactive-cursor">
                   <img 
                     src={product.image} 
                     alt={product.name} 
-                    className="w-full h-64 object-cover"
+                    className="product-image w-full h-64 object-cover"
                   />
                 </a>
               </Link>

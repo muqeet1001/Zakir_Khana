@@ -54,15 +54,15 @@ export default function Shows() {
           {shows.map((show, index) => (
             <Card 
               key={show.id}
-              className={`glass-effect overflow-hidden hover:shadow-2xl transition-all duration-300 hover-tilt fade-in ${isInView ? 'visible' : ''}`}
+              className={`interactive-cursor product-card glass-effect overflow-hidden hover:shadow-2xl transition-all duration-300 hover-tilt fade-in ${isInView ? 'visible' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Link href={`/show/${show.id}`}>
-                <a className="block">
+                <a className="block interactive-cursor">
                   <img 
                     src={show.image} 
                     alt={`${show.city} Comedy Show`} 
-                    className="w-full h-48 object-cover"
+                    className="product-image w-full h-48 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </a>
               </Link>
