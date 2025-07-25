@@ -8,11 +8,83 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- The initial favicon should be the first frame -->
+    <link rel="icon" type="image/png" href="/frame_00_delay-0.08s.png" sizes="32x32" />
   </head>
   <body>
     <div id="root"></div>
+    <!-- Full-page Loader Overlay -->
+    <div id="loader-overlay" style="
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw; height: 100vh;
+      background: linear-gradient(135deg, #fff 0%, #ff9800 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    ">
+      <img id="loader" src="/frame_00_delay-0.08s.png" width="96" height="96" style="border-radius:50%; box-shadow: 0 4px 24px rgba(255,152,0,0.15);" alt="Loading..." />
+    </div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+    <script>
+      const frames = [
+        '/frame_00_delay-0.08s.png',
+        '/frame_01_delay-0.08s.png',
+        '/frame_02_delay-0.08s.png',
+        '/frame_03_delay-0.08s.png',
+        '/frame_04_delay-0.08s.png',
+        '/frame_05_delay-0.08s.png',
+        '/frame_06_delay-0.08s.png',
+        '/frame_07_delay-0.08s.png',
+        '/frame_08_delay-0.08s.png',
+        '/frame_09_delay-0.08s.png',
+        '/frame_10_delay-0.08s.png',
+        '/frame_11_delay-0.08s.png',
+        '/frame_12_delay-0.08s.png',
+        '/frame_13_delay-0.08s.png',
+        '/frame_14_delay-0.08s.png',
+        '/frame_15_delay-0.08s.png',
+        '/frame_16_delay-0.08s.png',
+        '/frame_17_delay-0.08s.png',
+        '/frame_18_delay-0.08s.png',
+        '/frame_19_delay-0.08s.png',
+        '/frame_20_delay-0.08s.png',
+        '/frame_21_delay-0.08s.png',
+        '/frame_22_delay-0.08s.png',
+        '/frame_23_delay-0.08s.png',
+        '/frame_24_delay-0.08s.png',
+        '/frame_25_delay-0.08s.png',
+        '/frame_26_delay-0.08s.png',
+        '/frame_27_delay-0.08s.png',
+        '/frame_28_delay-0.08s.png',
+        '/frame_29_delay-0.08s.png',
+      ];
+      let current = 0;
+      setInterval(() => {
+        // Animate favicon
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+          link = document.createElement('link');
+          link.rel = 'icon';
+          link.type = 'image/png';
+          document.head.appendChild(link);
+        }
+        link.href = frames[current];
+        // Animate loader
+        const loader = document.getElementById('loader');
+        if (loader) loader.src = frames[current];
+        current = (current + 1) % frames.length;
+      }, 50);
+      // Hide loader overlay after page load (customize as needed)
+      window.addEventListener('DOMContentLoaded', () => {
+        window.setTimeout(() => {
+          const overlay = document.getElementById('loader-overlay');
+          if (overlay) overlay.style.display = 'none';
+        }, 1200); // Adjust delay as needed
+      });
+    </script>
   </body>
 </html>

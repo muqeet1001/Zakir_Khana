@@ -62,7 +62,7 @@ export default function Shows() {
                   <img 
                     src={show.image} 
                     alt={`${show.city} Comedy Show`} 
-                    className="product-image w-full h-48 object-cover hover:scale-110 transition-transform duration-300"
+                    className="product-image w-full h-full object-contain hover:scale-110 transition-transform duration-300"
                   />
                 </a>
               </Link>

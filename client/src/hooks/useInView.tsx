@@ -2,19 +2,24 @@ import { useState, useEffect, useRef } from 'react';
 
 export function useInView(options: IntersectionObserverInit = {}) {
   const [isInView, setIsInView] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
 
+    let hasBeenInView = false;
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
+      ([entry], obs) => {
+        if (entry.isIntersecting && !hasBeenInView) {
+          setIsInView(true);
+          hasBeenInView = true;
+          obs.disconnect(); // Stop observing after first intersection
+        }
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
+        threshold: options.threshold ?? 0.2,
+        rootMargin: options.rootMargin ?? '0px 0px -50px 0px',
         ...options,
       }
     );
@@ -22,7 +27,7 @@ export function useInView(options: IntersectionObserverInit = {}) {
     observer.observe(element);
 
     return () => {
-      observer.unobserve(element);
+      observer.disconnect();
     };
   }, [options]);
 

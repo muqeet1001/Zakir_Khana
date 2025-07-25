@@ -2,6 +2,7 @@ import { Link, useLocation } from 'wouter';
 import { useState } from 'react';
 import { useCart } from '@/hooks/useCart';
 import { CustomCursor } from './CustomCursor';
+import { usePageLoader } from '../hooks/usePageLoader';
 // import { ThemeToggle } from '@/components/ThemeToggle';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 
@@ -165,6 +166,7 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
+  usePageLoader();
   return (
     <div className="min-h-screen bg-background">
       <Header />

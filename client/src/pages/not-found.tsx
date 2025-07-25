@@ -1,13 +1,13 @@
 import { Link } from 'wouter';
 import { useInView } from '@/hooks/useInView';
-import { ThreeBackground } from '@/components/ThreeBackground';
+import { ThreeHeroStage } from '@/components/ThreeBackground';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 function Floating404() {
   return (
     <div className="canvas-container mb-12 h-64">
-      <ThreeBackground particleCount={15} />
+      <ThreeHeroStage />
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="rotating-box text-8xl font-bold flex items-center justify-center text-primary">
           404

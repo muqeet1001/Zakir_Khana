@@ -2,7 +2,7 @@ import { useParams } from 'wouter';
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useInView } from '@/hooks/useInView';
-import { ThreeBackground } from '@/components/ThreeBackground';
+import { ThreeHeroStage } from '@/components/ThreeBackground';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { MapPin, Clock, Users } from 'lucide-react';
@@ -105,7 +105,7 @@ export default function ShowDetail() {
   return (
     <section className="py-20 bg-secondary">
       <div className="relative">
-        <ThreeBackground particleCount={20} />
+        <ThreeHeroStage />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <div ref={ref} className={`text-center mb-12 fade-in ${isInView ? 'visible' : ''}`}>
